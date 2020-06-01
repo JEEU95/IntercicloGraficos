@@ -5,12 +5,9 @@ cap = cv2.VideoCapture(0)
 
 while (1):
     _, frame = cap.read()
-    #cv2.imwrite("cuadrado.jpg", frame)
-    #image = cv2.imread('cuadrado.jpg',0)
-    #img = cv2.imread('cuadrado.jpg',0)
-
-    image = frame
-    img = frame
+    cv2.imwrite("cuadrado.jpg", frame)
+    image = cv2.imread('cuadrado.jpg',0)
+    img = cv2.imread('cuadrado.jpg',0)
     
     #Algoritmo del tablero de ajedrez
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
