@@ -5,34 +5,29 @@ cap = cv2.VideoCapture(0)
 
 while (1):
     _, frame = cap.read()
-    #cv2.imwrite("cuadrado.jpg", frame)
-    #image = cv2.imread('cuadrado.jpg',0)
-    #img = cv2.imread('cuadrado.jpg',0)
-
-    image = frame
-    img = frame
+    cv2.imwrite("original.jpg", frame)
+    image= cv2.imread('original.jpg')
+    img = cv2.imread('original.jpg')
+    cv2.imshow('Original',image)
+    edges = cv2.Canny(image, 100, 100)
     
-    #Algoritmo del tablero de ajedrez
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    edges = cv2.Canny(gray, 100, 170, apertureSize=3)
-    cv2.imshow("Bordes", edges)
+    cv2.namedWindow('Original')       
+    cv2.moveWindow('Original', 50,200)
+    cv2.imshow('Original',image)
 
-    lines = cv2.HoughLines(edges, 1, np.pi/180, 200)
-    for x in range(0, len(lines)):
-        for rho, theta in lines[x]:
-            print(rho, theta)
-            a=np.cos(theta)
-            b=np.sin(theta)
-            x0 = a * rho
-            y0 = b * rho
-            x1 = int(x0 + 1000 * (-b))
-            y1 = int(y0 + 1000 * (a))
-            x2 = int(x0 - 1000 * (-b))
-            y2 = int(y0 - 1000 * (a))
-            cv2.line(img, (x1,y1), (x2,y2), (255,0,0), 2)
+    edges = cv2.Canny(image, 100, 100)
+    cv2.namedWindow('Bordes')       
+    cv2.moveWindow('Bordes', 700,30)
+    cv2.imshow('Bordes', edges)
 
-    cv2.imshow("Hough Lines", img)
-
+    contours,_= cv2.findContours(edges.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    
+    for cnt in contours:
+        cv2.drawContours(img,[cnt],0,(0,255,0),3)
+    cv2.namedWindow('Deteccion')       
+    cv2.moveWindow('Deteccion', 700,400)
+    cv2.imshow("Deteccion", img)
+    
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
         break
