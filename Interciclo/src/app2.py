@@ -3,6 +3,7 @@ from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, QFileDialog
 
+#COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
 class dialogPrincipal(QDialog):
     def __init__(self):
