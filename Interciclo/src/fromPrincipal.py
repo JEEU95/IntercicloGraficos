@@ -85,5 +85,5 @@ class Ui_dialogPrincipal(object):
         self.lblRuta.setText(_translate("dialogPrincipal", "Ruta//"))
         self.cmbOpciones.setItemText(0, _translate("dialogPrincipal", "Usar la cámara del ordenador"))
         self.cmbOpciones.setItemText(1, _translate("dialogPrincipal", "Subir un video desde el ordenador"))
-import ICON_rc
-import Seleccion_rc
+#import ICON_rc
+#import Seleccion_rc
