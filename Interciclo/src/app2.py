@@ -1,17 +1,34 @@
 import sys
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog
+from PyQt5.QtCore import QDir
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, QFileDialog
+
 
 class dialogPrincipal(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("Principal.ui", self)
         self.btnSiguiente.clicked.connect(self.conectar)
+        self.btnVideo.clicked.connect(self.buscarArchivo)
+
 
 
     def conectar(self):
         video=dialogVideo()
         video.exec()
+
+
+    def buscarArchivo(self):
+        print("buscar archivo")
+        file, _ = QFileDialog.getOpenFileName(self, 'Buscar Archivo', QDir.homePath(),
+                                              "All Files (*);;Text Files (*.txt)")
+        if file:
+            print("Archivo seleccionado: ", file)
+            url = file
+            self.lblRuta.setText(url)
+
+
+
 
 
 class dialogVideo(QDialog):
