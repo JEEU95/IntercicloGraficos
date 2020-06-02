@@ -8,8 +8,25 @@ class dialogPrincipal(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("Principal.ui", self)
+        self.btnVideo.setEnabled(False)
         self.btnSiguiente.clicked.connect(self.conectar)
         self.btnVideo.clicked.connect(self.buscarArchivo)
+        combo = self.cmbOpciones.currentText()
+        print(combo)
+
+        self.cmbOpciones.currentIndexChanged.connect(self.selectionchange)
+
+    def selectionchange(self, i):
+        print ("Items in the list are :")
+
+        for count in range(self.cmbOpciones.count()):
+            print (self.cmbOpciones.itemText(count))
+        print ("Current index", i, "selection changed ", self.cmbOpciones.currentText())
+        cambio = self.cmbOpciones.currentText()
+        if cambio == "Subir un video desde el ordenador":
+            self.btnVideo.setEnabled(True)
+        else:
+            self.btnVideo.setEnabled(False)
 
 
 
@@ -26,9 +43,6 @@ class dialogPrincipal(QDialog):
             print("Archivo seleccionado: ", file)
             url = file
             self.lblRuta.setText(url)
-
-
-
 
 
 class dialogVideo(QDialog):
