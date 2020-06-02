@@ -19,19 +19,22 @@ def dibujar(mask,color):
             cv2.putText(frame,'{},{}'.format(x,y),(x+10,y), font, 0.75,(0,255,0),1,cv2.LINE_AA)
             cv2.drawContours(frame, [nuevoContorno], 0, color, 3)
 cap = cv2.VideoCapture(0)
-azulBajo = np.array([100,100,20],np.uint8)
-azulAlto = np.array([125,255,255],np.uint8)
-amarilloBajo = np.array([15,100,20],np.uint8)
-amarilloAlto = np.array([45,255,255],np.uint8)
-redBajo1 = np.array([0,100,20],np.uint8)
-redAlto1 = np.array([5,255,255],np.uint8)
-redBajo2 = np.array([175,100,20],np.uint8)
-redAlto2 = np.array([179,255,255],np.uint8)
+
+colorRng=[[100,100,20],[125,255,255],[15,100,20],[45,255,255],[0,100,20],[5,255,255],[175,100,20],[179,255,255]]
+color =[(255,0,0),(0,255,255),(0,0,255)]
+
 font = cv2.FONT_HERSHEY_SIMPLEX
 while True:
   ret,frame = cap.read()
   if ret == True:
     frameHSV = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
+    
+    for i in range(3):
+        colorBajo=np.array(colorRng[i],np.uint8)
+        colorAlto=np.array(colorRng[i+1],np.uint8)
+        maskColor= cv2.inRange(frameHSV,colorBajo,colorAlto)
+        dibujar(maskColor,color[i])
+    '''
     maskAzul = cv2.inRange(frameHSV,azulBajo,azulAlto)
     maskAmarillo = cv2.inRange(frameHSV,amarilloBajo,amarilloAlto)
     maskRed1 = cv2.inRange(frameHSV,redBajo1,redAlto1)
@@ -39,9 +42,10 @@ while True:
     maskRed = cv2.add(maskRed1,maskRed2)
     dibujar(maskAzul,(255,0,0))
     dibujar(maskAmarillo,(0,255,255))
-    dibujar(maskRed,(0,0,255))
+    dibujar(maskRed,(0,0,255))'''
     cv2.imshow('frame',frame)
-    if cv2.waitKey(1) & 0xFF == ord('s'):
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27 or k == ord('s'):
       break
 cap.release()
 cv2.destroyAllWindows()
