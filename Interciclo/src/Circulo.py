@@ -1,13 +1,12 @@
 import cv2
 import numpy as np
 def dibujar(mask,color):
-  contornos,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL,
-      cv2.CHAIN_APPROX_SIMPLE)
+  contornos,hirarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
   for c in contornos:
     area = cv2.contourArea(c)
     epsilon = 0.01 * cv2.arcLength(c, True)
     approx = cv2.approxPolyDP(c, epsilon, True)
-    if area > 3000:
+    if area > 5000:
         if len(approx) > 10:
             #cv2.putText(frame, 'Circulo', (x, y - 5), 1, 1, (0, 255, 0), 1)
             M = cv2.moments(c)
@@ -22,6 +21,7 @@ cap = cv2.VideoCapture(0)
 
 colorRng=[[100,100,20],[125,255,255],[15,100,20],[45,255,255],[0,100,20],[5,255,255],[175,100,20],[179,255,255]]
 color =[(255,0,0),(0,255,255),(0,0,255)]
+#figura
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 while True:
@@ -29,6 +29,7 @@ while True:
   if ret == True:
     frameHSV = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     
+    cv2.imshow('frameHSV',frameHSV)
     for i in range(3):
         colorBajo=np.array(colorRng[i],np.uint8)
         colorAlto=np.array(colorRng[i+1],np.uint8)
