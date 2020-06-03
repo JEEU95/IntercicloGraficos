@@ -1,6 +1,5 @@
 import sys
 
-import cv2
 import reconocimiento
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDir
