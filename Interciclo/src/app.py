@@ -1,4 +1,5 @@
 import sys
+
 import reconocimiento
 import img.Seleccion_rc
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
@@ -89,11 +90,11 @@ class dialogVideo(QDialog):
 
         if self.cbRec.isChecked() == True:
             print("Rectangulo")
-            figuras.append(41)
+            figuras.append(42)
 
         if self.cbCua.isChecked() == True:
             print("Cuadrado")
-            figuras.append(42)
+            figuras.append(41)
         
         print(figuras)
 
