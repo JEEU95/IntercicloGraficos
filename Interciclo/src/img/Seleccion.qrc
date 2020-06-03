@@ -2,6 +2,12 @@
   <qresource prefix="Video">
     <file>video.png</file>
   </qresource>
+  <qresource prefix="Figuras">
+    <file>circulo.png</file>
+    <file>cuadrado.png</file>
+    <file>rectangulo.png</file>
+    <file>triangulo.png</file>
+  </qresource>
   <qresource prefix="WebCam">
     <file>webcam.png</file>
   </qresource>
