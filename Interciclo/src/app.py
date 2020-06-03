@@ -56,28 +56,49 @@ class dialogVideo(QDialog):
         super().__init__()
         uic.loadUi("Video.ui", self)
         self.btnPlay.clicked.connect(self.play)
+        self.cbCir.stateChanged.connect(self.opciones)
+        self.cbTri.stateChanged.connect(self.opciones)
+        self.cbRec.stateChanged.connect(self.opciones)
+        self.cbCua.stateChanged.connect(self.opciones)
+        
+    def opciones(self):
+        global figuras
+        figuras=[]
+        if self.cbCir.isChecked() == True:
+            print("Circulo")
+            figuras.append(11)
+
+        if self.cbTri.isChecked() == True:
+            print("Triangulo")
+            figuras.append(3)
+
+        if self.cbRec.isChecked() == True:
+            print("Rectangulo")
+            figuras.append(41)
+
+        if self.cbCua.isChecked() == True:
+            print("Cuadrado")
+            figuras.append(42)
+        
+        print(figuras)
 
     def play(self):
-        global figuras
-        while True:
-            if self.cbCir.checked == True:
-                figuras.add(11)
-            if self.cbTri.checked == True:
-                figuras.add(3)
-            if self.cbRec.checked == True:
-                figuras.add(41)
-            if self.cbCua.checked == True:
-                figuras.add(42)
+        if OpVideo == 0 :
+            #Detectar webcam o video
+            reconocimiento.capPantalla(0)
+        else:
+            reconocimiento.capPantalla(url)
+        
+        while(True):
+            #repetir el bucle de trazado sobre la pantalla con cada opcion de figura activa
             for i in figuras:
-                if OpVideo == 0 :
-                    reconocimiento.seguimiento(0,i)
-                else:
-                    print(url)
-                    reconocimiento.seguimiento(url,i)
-            figuras = []
+                reconocimiento.trazar(i)
+            
+            k = cv2.waitKey(5) & 0xFF
             if k == 27 or k == ord('s'):
                 break
 
+        
 
 
 if __name__== '__main__':
