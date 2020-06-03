@@ -29,7 +29,7 @@
     <string>Video/Cámara</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox">
+  <widget class="QCheckBox" name="cbCir">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -42,7 +42,7 @@
     <string>Círculos</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_2">
+  <widget class="QCheckBox" name="cbCua">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -55,7 +55,7 @@
     <string>Cuadrado</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_3">
+  <widget class="QCheckBox" name="cbTri">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -68,7 +68,7 @@
     <string>Triángulos</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_4">
+  <widget class="QCheckBox" name="cbRec">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -156,7 +156,7 @@
     <string>Salir</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btnPlay">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -169,7 +169,7 @@
     <string>Empezar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnPause">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -182,7 +182,7 @@
     <string>Pausar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="btnStop">
    <property name="geometry">
     <rect>
      <x>580</x>
@@ -195,7 +195,7 @@
     <string>Detener</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="btnDescargar">
    <property name="geometry">
     <rect>
      <x>820</x>

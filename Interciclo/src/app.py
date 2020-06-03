@@ -1,9 +1,4 @@
 import sys
-from PyQt5 import uic, QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog
-
-OpVideo=0
-import sys
 import reconocimiento
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDir
@@ -12,6 +7,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, Q
 #COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 OpVideo=0
 url=''
+figuras=[]
 class dialogPrincipal(QDialog):
     def __init__(self):
         super().__init__()
@@ -21,7 +17,6 @@ class dialogPrincipal(QDialog):
         self.btnVideo.clicked.connect(self.buscarArchivo)
         combo = self.cmbOpciones.currentText()
         print(combo)
-
         self.cmbOpciones.currentIndexChanged.connect(self.selectionchange)
 
     def selectionchange(self, i):
@@ -40,8 +35,6 @@ class dialogPrincipal(QDialog):
             self.btnVideo.setEnabled(False)
             OpVideo=0
 
-
-
     def conectar(self):
         print (OpVideo)
         video=dialogVideo()
@@ -58,21 +51,33 @@ class dialogPrincipal(QDialog):
             url = file
             self.lblRuta.setText(url)
 
-
 class dialogVideo(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("Video.ui", self)
-        self.pushButton.clicked.connect(self.texto)
+        self.btnPlay.clicked.connect(self.play)
 
-    def texto(self):
-        if OpVideo == 0 :
-            reconocimiento.seguimiento(0,11)
-        else:
-            print(url)
-            reconocimiento.seguimiento(url,11)
-        print("textooooo")
-        
+    def play(self):
+        global figuras
+        while True:
+            if self.cbCir.checked == True:
+                figuras.add(11)
+            if self.cbTri.checked == True:
+                figuras.add(3)
+            if self.cbRec.checked == True:
+                figuras.add(41)
+            if self.cbCua.checked == True:
+                figuras.add(42)
+            for i in figuras:
+                if OpVideo == 0 :
+                    reconocimiento.seguimiento(0,i)
+                else:
+                    print(url)
+                    reconocimiento.seguimiento(url,i)
+            figuras = []
+            if k == 27 or k == ord('s'):
+                break
+
 
 
 if __name__== '__main__':
