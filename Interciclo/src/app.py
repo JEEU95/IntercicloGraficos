@@ -84,23 +84,12 @@ class dialogVideo(QDialog):
         print(figuras)
 
     def play(self):
+        
         if OpVideo == 0 :
-            #Detectar webcam o video
-            reconocimiento.capPantalla(0)
+            reconocimiento.seguimiento(0,figuras)
         else:
-            reconocimiento.capPantalla(url)
-        
-        while(True):
-            #repetir el bucle de trazado sobre la pantalla con cada opcion de figura activa
-            for i in figuras:
-                reconocimiento.trazar(i)
-            
-            k = cv2.waitKey(5) & 0xFF
-            if k == 27 or k == ord('s'):
-                break
-
-        
-
+            print(url)
+            reconocimiento.seguimiento(url,figuras)
 
 if __name__== '__main__':
     app = QApplication(sys.argv)
