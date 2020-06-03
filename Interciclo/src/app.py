@@ -1,10 +1,10 @@
 import sys
 import reconocimiento
+import img.Seleccion_rc
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, QFileDialog
 
-#COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 OpVideo=0
 url=''
 figuras=[]
@@ -13,6 +13,10 @@ class dialogPrincipal(QDialog):
         super().__init__()
         uic.loadUi("Principal.ui", self)
         self.btnVideo.setEnabled(False)
+        self.btnVideo.setVisible(False)
+        self.lblRuta.setVisible(False)
+        self.lblWebCam.setVisible(True)
+        self.lblVideo.setVisible(False)
         self.btnSiguiente.clicked.connect(self.conectar)
         self.btnVideo.clicked.connect(self.buscarArchivo)
         combo = self.cmbOpciones.currentText()
@@ -30,9 +34,18 @@ class dialogPrincipal(QDialog):
         print(cambio)
         if cambio == "Subir un video desde el ordenador":
             self.btnVideo.setEnabled(True)
+            self.btnVideo.setVisible(True)
+            self.btnSiguiente.setEnabled(False)
+            self.lblWebCam.setVisible(False)
+            self.lblVideo.setVisible(True)
             OpVideo=1
         else:
             self.btnVideo.setEnabled(False)
+            self.btnVideo.setVisible(False)
+            self.btnSiguiente.setEnabled(True)
+            self.lblRuta.setVisible(False)
+            self.lblWebCam.setVisible(True)
+            self.lblVideo.setVisible(False)
             OpVideo=0
 
     def conectar(self):
@@ -49,7 +62,9 @@ class dialogPrincipal(QDialog):
         if file:
             print("Archivo seleccionado: ", file)
             url = file
+            self.lblRuta.setVisible(True)
             self.lblRuta.setText(url)
+            self.btnSiguiente.setEnabled(True)
 
 class dialogVideo(QDialog):
     def __init__(self):

@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="Video">
-    <file>video.png</file>
-  </qresource>
-  <qresource prefix="WebCam">
-    <file>webcam.png</file>
-  </qresource>
-</RCC>
