@@ -32,18 +32,18 @@ def seguimiento(video, figuras):
                         if len(approx) == 4:
                             aspect_ratio = float(w) / h
                             print('aspect_ratio= ', aspect_ratio)
-                            if aspect_ratio == 1:
+                            if aspect_ratio >= 1 and aspect_ratio < 1.5:
                                 dib()
 
                     if figura == 42:
                         if len(approx) == 4:
                             aspect_ratio = float(w) / h
                             print('aspect_ratio= ', aspect_ratio)
-                            if aspect_ratio != 1:
+                            if aspect_ratio > 1.5:
                                 dib()
 
 
-                    if figura > 10:
+                    if figura == 10:
                         if len(approx) > 10:
                             dib()
 

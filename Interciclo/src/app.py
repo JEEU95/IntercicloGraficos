@@ -82,7 +82,7 @@ class dialogVideo(QDialog):
         figuras=[]
         if self.cbCir.isChecked() == True:
             print("Circulo")
-            figuras.append(11)
+            figuras.append(10)
 
         if self.cbTri.isChecked() == True:
             print("Triangulo")
