@@ -8,7 +8,8 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, Q
 OpVideo=0
 url=''
 figuras=[]
-    
+
+
 class dialogPrincipal(QDialog):
     def __init__(self):
         super().__init__()
@@ -19,11 +20,13 @@ class dialogPrincipal(QDialog):
         self.lblWebCam.setVisible(True)
         self.lblVideo.setVisible(False)
         self.btnSiguiente.clicked.connect(self.conectar)
+        self.btnSalir.clicked.connect(self.Salir)
         self.btnVideo.clicked.connect(self.buscarArchivo)
         combo = self.cmbOpciones.currentText()
         print(combo)
         self.cmbOpciones.currentIndexChanged.connect(self.selectionchange)
-
+    def Salir(self):
+        sys.exit(0)
     def selectionchange(self, i):
         global OpVideo
         print ("Items in the list are :")
@@ -71,6 +74,7 @@ class dialogVideo(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("Video.ui", self)
+        self.btnSalir.clicked.connect(self.Salir)
         self.btnPlay.clicked.connect(self.play)
         self.btnAtras.clicked.connect(self.conectar)
         self.cbCir.stateChanged.connect(self.opciones)
@@ -102,6 +106,9 @@ class dialogVideo(QDialog):
             figuras.append(41)
         
         print(figuras)
+    
+    def Salir(self):
+        sys.exit(0)
 
     def play(self):
         if figuras ==[]:
