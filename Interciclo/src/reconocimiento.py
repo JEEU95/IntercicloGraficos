@@ -10,7 +10,7 @@ def seguimiento(video, figura):
             approx = cv2.approxPolyDP(c, epsilon, True)
             x, y, w, h = cv2.boundingRect(approx)
 
-            def dibujar():
+            def dib():
                 # cv2.putText(frame, 'Circulo', (x, y - 5), 1, 1, (0, 255, 0), 1)
                 M = cv2.moments(c)
                 if (M["m00"] == 0): M["m00"] = 1
@@ -25,26 +25,26 @@ def seguimiento(video, figura):
                 if figura == 3:
                     if len(approx) == 3:
                         print("3333333333333")
-                        dibujar()
+                        dib()
 
                 if figura == 41:
                     if len(approx) == 4:
                         aspect_ratio = float(w) / h
                         print('aspect_ratio= ', aspect_ratio)
                         if aspect_ratio == 1:
-                            dibujar()
+                            dib()
 
                 if figura == 42:
                     if len(approx) == 4:
                         aspect_ratio = float(w) / h
                         print('aspect_ratio= ', aspect_ratio)
                         if aspect_ratio != 1:
-                            dibujar()
+                            dib()
 
 
                 if figura > 10:
                     if len(approx) > 10:
-                        dibujar()
+                        dib()
 
 
 
