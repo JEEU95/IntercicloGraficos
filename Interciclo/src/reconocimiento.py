@@ -70,11 +70,13 @@ def seguimiento(video, figuras):
                 maskColor = cv2.inRange(frameHSV, colorBajo, colorAlto)
                 dibujar(maskColor, color[i])
             cv2.imshow('frame', frame)
-            salida.write(frame)       
-            
+            salida.write(frame)
             k = cv2.waitKey(5) & 0xFF
             if k == 27 or k == ord('s'):
                 break
+        else: break
+            
+            
     cap.release()
     cv2.destroyAllWindows()
 
