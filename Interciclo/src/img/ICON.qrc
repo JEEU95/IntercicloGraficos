@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="Salir">
-    <file>salir.png</file>
-  </qresource>
-  <qresource prefix="Siguiente">
-    <file>siguiente.png</file>
-  </qresource>
-</RCC>

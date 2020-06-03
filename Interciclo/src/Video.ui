@@ -19,11 +19,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>140</y>
-     <width>101</width>
-     <height>16</height>
+     <x>60</x>
+     <y>240</y>
+     <width>261</width>
+     <height>111</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Video/Cámara</string>
@@ -32,11 +37,16 @@
   <widget class="QCheckBox" name="cbCir">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>110</y>
-     <width>70</width>
+     <x>100</x>
+     <y>130</y>
+     <width>111</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Círculos</string>
@@ -48,14 +58,19 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>110</y>
-     <width>70</width>
+     <x>630</x>
+     <y>130</y>
+     <width>131</width>
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Cuadrado</string>
+    <string>Cuadrados</string>
    </property>
    <property name="checked">
     <bool>false</bool>
@@ -64,11 +79,16 @@
   <widget class="QCheckBox" name="cbTri">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>110</y>
-     <width>70</width>
-     <height>17</height>
+     <x>260</x>
+     <y>120</y>
+     <width>121</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Triángulos</string>
@@ -77,11 +97,16 @@
   <widget class="QCheckBox" name="cbRec">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>110</y>
-     <width>91</width>
-     <height>17</height>
+     <x>440</x>
+     <y>120</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Rectángulos</string>
@@ -90,15 +115,15 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>30</y>
-     <width>231</width>
-     <height>16</height>
+     <x>280</x>
+     <y>20</y>
+     <width>351</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="text">
@@ -108,15 +133,15 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>111</width>
-     <height>16</height>
+     <x>60</x>
+     <y>65</y>
+     <width>271</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="text">
@@ -126,24 +151,32 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>140</y>
-     <width>151</width>
-     <height>16</height>
+     <x>470</x>
+     <y>260</y>
+     <width>431</width>
+     <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Reconocimiento de objetos</string>
+    <string>Reconocimiento Objetos</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnAtras">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>520</y>
-     <width>75</width>
-     <height>23</height>
+     <x>60</x>
+     <y>530</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Atrás</string>
@@ -152,11 +185,14 @@
   <widget class="QPushButton" name="btnSalir">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>40</y>
-     <width>75</width>
-     <height>23</height>
+     <x>630</x>
+     <y>530</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Salir</string>
@@ -165,76 +201,107 @@
   <widget class="QPushButton" name="btnPlay">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>510</y>
-     <width>51</width>
-     <height>23</height>
+     <x>340</x>
+     <y>420</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Empezar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnPause">
+  <widget class="QLabel" name="lblCir">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>510</y>
-     <width>41</width>
-     <height>23</height>
+     <x>100</x>
+     <y>160</y>
+     <width>61</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Figuras/circulo.png);</string>
    </property>
    <property name="text">
-    <string>Pausar</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnStop">
+  <widget class="QLabel" name="lblTri">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>510</y>
-     <width>41</width>
-     <height>23</height>
+     <x>280</x>
+     <y>160</y>
+     <width>61</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Figuras/triangulo.png);</string>
    </property>
    <property name="text">
-    <string>Detener</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnDescargar">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>510</y>
-     <width>71</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Descargar</string>
-   </property>
-  </widget>
-  <widget class="QOpenGLWidget" name="openOriginal">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>170</y>
-     <width>431</width>
-     <height>331</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QOpenGLWidget" name="openReconocimiento">
+  <widget class="QLabel" name="lblRec">
    <property name="geometry">
     <rect>
      <x>450</x>
-     <y>170</y>
-     <width>431</width>
-     <height>331</height>
+     <y>160</y>
+     <width>101</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Figuras/rectangulo.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblCua">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>160</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Figuras/cuadrado.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblError">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>350</y>
+     <width>521</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 4);</string>
+   </property>
+   <property name="text">
+    <string>Error: Selecciona una figura para comenzar</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="img/Seleccion.qrc"/>
+ </resources>
  <connections/>
 </ui>

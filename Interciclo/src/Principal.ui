@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
+    <width>647</width>
     <height>525</height>
    </rect>
   </property>
@@ -19,16 +19,18 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>20</y>
-     <width>351</width>
-     <height>81</height>
+     <x>120</x>
+     <y>40</y>
+     <width>361</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Ravie</family>
-     <pointsize>14</pointsize>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -38,7 +40,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>120</x>
      <y>70</y>
      <width>351</width>
      <height>51</height>
@@ -94,9 +96,12 @@
     <rect>
      <x>50</x>
      <y>460</y>
-     <width>75</width>
-     <height>23</height>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Salir</string>
@@ -105,11 +110,14 @@
   <widget class="QPushButton" name="btnSiguiente">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>450</y>
-     <width>75</width>
-     <height>23</height>
+     <x>530</x>
+     <y>460</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Siguiente</string>
@@ -119,10 +127,13 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>250</y>
-     <width>75</width>
-     <height>23</height>
+     <y>240</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI Emoji&quot;;</string>
    </property>
    <property name="text">
     <string>Seleccionar</string>
@@ -195,8 +206,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../img/Seleccion.qrc"/>
-  <include location="../img/ICON.qrc"/>
+  <include location="img/Seleccion.qrc"/>
  </resources>
  <connections/>
 </ui>

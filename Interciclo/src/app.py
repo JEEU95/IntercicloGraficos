@@ -1,5 +1,4 @@
 import sys
-
 import reconocimiento
 import img.Seleccion_rc
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
@@ -9,6 +8,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QMdiSubWindow, QDialog, Q
 OpVideo=0
 url=''
 figuras=[]
+    
 class dialogPrincipal(QDialog):
     def __init__(self):
         super().__init__()
@@ -72,11 +72,16 @@ class dialogVideo(QDialog):
         super().__init__()
         uic.loadUi("Video.ui", self)
         self.btnPlay.clicked.connect(self.play)
+        self.btnAtras.clicked.connect(self.conectar)
         self.cbCir.stateChanged.connect(self.opciones)
         self.cbTri.stateChanged.connect(self.opciones)
         self.cbRec.stateChanged.connect(self.opciones)
         self.cbCua.stateChanged.connect(self.opciones)
-        
+        self.lblError.setVisible(False)
+    def conectar(self):
+        print (OpVideo)
+        video=dialogPrincipal()
+        video.exec()
     def opciones(self):
         global figuras
         figuras=[]
@@ -99,12 +104,15 @@ class dialogVideo(QDialog):
         print(figuras)
 
     def play(self):
-        
-        if OpVideo == 0 :
-            reconocimiento.seguimiento(0,figuras)
+        if figuras ==[]:
+            self.lblError.setVisible(True)
         else:
-            print(url)
-            reconocimiento.seguimiento(url,figuras)
+            self.lblError.setVisible(False)
+            if OpVideo == 0 :
+                reconocimiento.seguimiento(0,figuras)
+            else:
+                print(url)
+                reconocimiento.seguimiento(url,figuras)
 
 if __name__== '__main__':
     app = QApplication(sys.argv)
