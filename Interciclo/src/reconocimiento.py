@@ -50,6 +50,7 @@ def seguimiento(video, figuras):
 
 
     cap = cv2.VideoCapture(video)
+    salida =cv2.VideoWriter('videoSalida.avi', cv2.VideoWriter_fourcc(*'XVID'), 20.0, (640,480))
 
     colorRng = [[100, 100, 20], [125, 255, 255], [15, 100, 20], [45, 255, 255], [0, 100, 20], [5, 255, 255],
                 [175, 100, 20], [179, 255, 255]]
@@ -68,16 +69,9 @@ def seguimiento(video, figuras):
                 colorAlto = np.array(colorRng[i + 1], np.uint8)
                 maskColor = cv2.inRange(frameHSV, colorBajo, colorAlto)
                 dibujar(maskColor, color[i])
-            '''
-            maskAzul = cv2.inRange(frameHSV,azulBajo,azulAlto)
-            maskAmarillo = cv2.inRange(frameHSV,amarilloBajo,amarilloAlto)
-            maskRed1 = cv2.inRange(frameHSV,redBajo1,redAlto1)
-            maskRed2 = cv2.inRange(frameHSV,redBajo2,redAlto2)
-            maskRed = cv2.add(maskRed1,maskRed2)
-            dibujar(maskAzul,(255,0,0))
-            dibujar(maskAmarillo,(0,255,255))
-            dibujar(maskRed,(0,0,255))'''
             cv2.imshow('frame', frame)
+            salida.write(frame)       
+            
             k = cv2.waitKey(5) & 0xFF
             if k == 27 or k == ord('s'):
                 break
